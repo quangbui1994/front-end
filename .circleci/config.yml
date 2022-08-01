@@ -7,9 +7,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - checkout
-      - node/install:
-          node-version: "12.22"
-      - node/install-packages
+      - run: yarn 
       - run:
           command: yarn test
 workflows:

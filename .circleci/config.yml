@@ -7,7 +7,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - checkout
-      - run: yarn 
+      - run: yarn install
       - run:
           command: yarn test
 workflows:

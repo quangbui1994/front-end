@@ -1,13 +1,15 @@
 version: 2.1
 orbs:
-  node: circleci/node@12.9.1
+  node: circleci/node@5.0.2
 jobs:
   build-and-test:
     docker:
-      - image: circleci/node:12.9.1-browsers
+      - image: cimg/base:stable
     steps:
       - checkout
-      - run: yarn install
+      - node/install:
+        install-yarn: true
+        node-version: '16.13'
       - run:
           command: yarn test
 workflows:

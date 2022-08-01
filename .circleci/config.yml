@@ -4,12 +4,10 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:12.9.1-browsers
     steps:
       - checkout
-      - node/install:
-        install-yarn: true
-        node-version: '16.13'
+      - run: yarn install
       - run:
           command: yarn test
 workflows:
